@@ -3,6 +3,9 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRouter from "./routes/authRouter.js";
+import shortURLRouter from "./routes/shortURLRouter.js";
+import userRouter from "./routes/userRouter.js";
 import morgan from "morgan"; // Import morgan
 import connectDB from "./db/dbConnect.js";
 import { config } from "./config.js";
@@ -25,7 +28,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 connectDB();
-
+app.use("/api/auth", authRouter);
+app.use("/api/s", shortURLRouter);
+app.use("api/user",userRouter);
 
 // TODO add routes here
 

@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 //import MyURLsPage from './Pages/User/MyURLsPage';
 import './index.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-//import URLShortener from './Pages/URLShortener/URLShortener';
+import URLShortener from './Pages/URLShortener/URLShortener';
 //import ProfilePage from './Pages/User/Profile';
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/login' element={<LoginPage/>} />
-            <Route element={<PrivateRoute/>}>
-
-            </Route>
+            {/* <Route element={<PrivateRoute/>}> */}
+            {/* </Route> */}
+              <Route path='/URLShortener' element={<URLShortener/>} />
         </Routes>
     </Router>
   )
